@@ -1,0 +1,1131 @@
+Pornias_CV.pdf
+```[cite: 3]
+
+---
+
+### Full Updated `index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Pornias | Aspiring Full-Stack & .NET Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0c10;
+      --bg-secondary: #11151c;
+      --bg-card: #161b24;
+      --border: #232b38;
+      --border-hover: #3b475a;
+      --text-main: #f0f3f8;
+      --text-muted: #8b99ad;
+      --text-sub: #637184;
+      --accent: #8b1e2f;
+      --accent-soft: rgba(139, 30, 47, 0.15);
+      --accent-border: rgba(139, 30, 47, 0.4);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --max-w: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 5rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 12, 16, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 1.1rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: #ff526c;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* Hero Section with Profile Picture */
+    .hero {
+      padding: 5rem 0 3.5rem;
+    }
+
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .hero-avatar {
+      width: 220px;
+      height: 220px;
+      border-radius: 20px;
+      object-fit: cover;
+      display: block;
+      border: 2px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 30, 47, 0.2);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #ff8595;
+      background: var(--accent-soft);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-border);
+      margin-bottom: 1.25rem;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: #ff526c;
+      border-radius: 50%;
+      box-shadow: 0 0 0 rgba(255, 82, 108, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 82, 108, 0.6); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 82, 108, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 82, 108, 0); }
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-meta {
+      font-size: 0.95rem;
+      color: #ff8595;
+      font-family: var(--font-mono);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    /* Availability Callout Card */
+    .availability-card {
+      background: linear-gradient(145deg, #161b24 0%, #121620 100%);
+      border: 1px solid var(--border);
+      border-left: 4px solid #4ade80;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .availability-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-mono);
+      color: #4ade80;
+      margin-bottom: 0.2rem;
+    }
+
+    .availability-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .availability-subtext {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--text-main);
+      color: var(--bg-primary);
+      border: 1px solid var(--text-main);
+    }
+
+    .btn-primary:hover {
+      background: #ffffff;
+    }
+
+    .btn-cv {
+      background: #ff526c;
+      color: #ffffff;
+      border: 1px solid #ff526c;
+      font-weight: 600;
+    }
+
+    .btn-cv:hover {
+      background: #e0415a;
+      border-color: #e0415a;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-muted);
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      background: var(--bg-primary);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-sm:hover {
+      border-color: var(--accent-border);
+      color: #ff8595;
+    }
+
+    /* Sections */
+    .section {
+      padding: 4.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Education Card */
+    .education-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .edu-main h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-school {
+      color: #ff8595;
+      font-size: 0.92rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-specialization {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .edu-location {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #ff8595;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .skill-pill {
+      font-size: 0.8rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      padding: 1.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tag {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: #ff8595;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-repo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--text-main);
+      font-size: 0.82rem;
+      text-decoration: none;
+      padding: 0.3rem 0.7rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .project-repo-link:hover {
+      border-color: var(--accent-border);
+      color: #ff8595;
+      background: var(--accent-soft);
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-summary {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .tech-tags li {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    /* Certifications Grid */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.35rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s;
+    }
+
+    .cert-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .cert-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .cert-issuer {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: #ff8595;
+      font-weight: 500;
+    }
+
+    .cert-status {
+      font-size: 0.72rem;
+      color: #4ade80;
+      background: rgba(74, 222, 128, 0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(74, 222, 128, 0.25);
+    }
+
+    .cert-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .cert-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .cert-id {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-sub);
+    }
+
+    .cert-id span {
+      color: var(--text-muted);
+    }
+
+    .cert-verify-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text-main);
+      font-size: 0.8rem;
+      text-decoration: none;
+      padding: 0.35rem 0.7rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .cert-verify-btn:hover {
+      border-color: var(--accent-border);
+      color: #ff8595;
+      background: var(--accent-soft);
+    }
+
+    /* Career Objectives Box */
+    .objectives-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid #ff526c;
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .objectives-box h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .objectives-box ul {
+      list-style-type: square;
+      padding-left: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .objectives-box li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Footer / Contact Details */
+    .footer {
+      padding: 4rem 0 1rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-content h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-details {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: #ff8595;
+    }
+
+    .contact-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      width: 65px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+
+    .footer-bottom {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+      .hero-avatar {
+        width: 160px;
+        height: 160px;
+      }
+      .certs-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-content {
+        flex-direction: column;
+      }
+      .footer-links {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">Joshua Pornias<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certificates</a>
+        <a href="Pornias_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+        <a href="#contact" class="btn btn-sm">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Photo and Action Buttons -->
+  <section class="hero" id="about">
+    <div class="container">
+      <div class="hero-layout">
+        
+        <!-- Introduction Text -->
+        <div class="hero-content">
+          <div class="badge">
+            <span class="pulse"></span>
+            Available for IT & Full-Stack Internships
+          </div>
+          <h1 class="hero-title">Aspiring Full-Stack Developer & .NET Backend Developer</h1>
+          <div class="hero-meta">Quezon, Philippines &bull; Manuel S. Enverga University Foundation</div>
+          <p class="hero-desc">
+            Motivated BS Information Technology student specializing in Web and App Development[cite: 3]. Focused on building functional, user-friendly, and efficient web and mobile applications with strong backend architecture using C#, ASP.NET Core, RESTful APIs, and MySQL[cite: 3].
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#certifications" class="btn btn-secondary">Coursera Certifications</a>
+            <!-- Clickable CV / Resume Link -->
+            <a href="Pornias_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-cv">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              View CV / Resume
+            </a>
+            <a href="tel:09946956036" class="btn btn-secondary">Call: 09946956036</a>
+          </div>
+        </div>
+
+        <!-- Portfolio Image -->
+        <div class="hero-avatar-wrapper">
+          <img src="portfolio-pic.jpg" alt="Joshua Pornias" class="hero-avatar" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Availability & Education Section -->
+  <section class="section" id="education" style="padding-top: 2rem;">
+    <div class="container">
+      
+      <!-- Availability Notification -->
+      <div class="availability-card">
+        <div>
+          <div class="availability-title">Availability</div>
+          <div class="availability-text">Available to start December 1, 2026</div>
+        </div>
+        <div class="availability-subtext">Internship start date, if I receive an offer.</div>
+      </div>
+
+      <!-- Education Details -->
+      <div class="education-card">
+        <div class="edu-main">
+          <h3>Bachelor of Science in Information Technology</h3>
+          <div class="edu-school">Manuel S. Enverga University Foundation</div>
+          <div class="edu-specialization">Specialization in Web and App Development</div>
+        </div>
+        <div class="edu-location">Lucena City, Quezon, Philippines</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Competencies -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Technical Skills & Areas of Interest</h2>
+        <p class="section-subtitle">Categorized competencies spanning academic project implementation and active learning.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Backend -->
+        <div class="skill-card">
+          <h3>Backend Development</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">.NET / ASP.NET Core</span>
+            <span class="skill-pill">RESTful APIs</span>
+            <span class="skill-pill">CRUD Operations</span>
+            <span class="skill-pill">Authentication & Authorization</span>
+            <span class="skill-pill">Server-Side Logic</span>
+            <span class="skill-pill">API Integration</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-card">
+          <h3>Frontend Development</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">HTML5</span>
+            <span class="skill-pill">CSS3</span>
+            <span class="skill-pill">Responsive Design</span>
+            <span class="skill-pill">UI/UX Prototyping</span>
+            <span class="skill-pill">Figma</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-card">
+          <h3>Database Management</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Database Schema Design</span>
+            <span class="skill-pill">SQL Queries</span>
+            <span class="skill-pill">Relational Concepts</span>
+            <span class="skill-pill">MySQL Workbench</span>
+          </div>
+        </div>
+
+        <!-- Mobile Development -->
+        <div class="skill-card">
+          <h3>Mobile Development</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Swift</span>
+            <span class="skill-pill">SwiftUI</span>
+            <span class="skill-pill">React Native</span>
+            <span class="skill-pill">Expo</span>
+            <span class="skill-pill">MVC Architecture</span>
+            <span class="skill-pill">Xcode</span>
+          </div>
+        </div>
+
+        <!-- Tools & Workflow -->
+        <div class="skill-card">
+          <h3>Development Tools</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Visual Studio</span>
+            <span class="skill-pill">Visual Studio Code</span>
+            <span class="skill-pill">Xcode</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">GitHub</span>
+            <span class="skill-pill">GitHub Desktop</span>
+            <span class="skill-pill">Postman</span>
+          </div>
+        </div>
+
+        <!-- Additional Skills -->
+        <div class="skill-card">
+          <h3>Additional Competencies</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Problem Solving</span>
+            <span class="skill-pill">Critical Thinking</span>
+            <span class="skill-pill">Team Collaboration</span>
+            <span class="skill-pill">Canva Graphic Design</span>
+            <span class="skill-pill">CapCut Video Editing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Objectives -->
+      <div class="objectives-box">
+        <h3>Career Objectives</h3>
+        <ul>
+          <li>Gaining hands-on internship experience in building scalable web applications and enterprise services using ASP.NET Core.</li>
+          <li>Designing and integrating RESTful APIs and connecting them with responsive React and mobile frontends.</li>
+          <li>Managing and optimizing relational databases using MySQL.</li>
+          <li>Adopting professional development workflows including version control, debugging, automated testing, and secure deployment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Real-world applications and system designs showcasing full-stack, frontend, and native mobile development.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Athlete_Hub -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Full-Stack & Mobile Platform</span>
+            <a href="https://github.com/N345S/Athlete_Hub" target="_blank" rel="noopener noreferrer" class="project-repo-link">
+              GitHub Repository &nearr;
+            </a>
+          </div>
+          <h3 class="project-title">Athlete-Hub – Athlete Portfolio and Monitoring System</h3>
+          <p class="project-summary">
+            A comprehensive sports management platform designed to manage athlete profiles, monitor academic eligibility, track performance records, and aggregate athletic data. Built with a .NET backend, React web portal, React Native mobile client, and MySQL relational database.
+          </p>
+          <ul class="tech-tags">
+            <li>.NET</li>
+            <li>MySQL</li>
+            <li>React</li>
+            <li>React Native</li>
+            <li>RESTful API</li>
+            <li>Figma</li>
+          </ul>
+        </article>
+
+        <!-- Project 2: ValorZone-Project -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Frontend Web Application</span>
+            <a href="https://github.com/shuaygg/ValorZone-Project" target="_blank" rel="noopener noreferrer" class="project-repo-link">
+              GitHub Repository &nearr;
+            </a>
+          </div>
+          <h3 class="project-title">ValorZone-Project</h3>
+          <p class="project-summary">
+            An interactive web application crafted with pure HTML, CSS, and modern JavaScript. Features responsive layout structures, tailored visual assets, and clean client-side dynamic behaviors.
+          </p>
+          <ul class="tech-tags">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Responsive Design</li>
+          </ul>
+        </article>
+
+        <!-- Project 3: Daily Habit App -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Native iOS Application</span>
+            <a href="https://github.com/shuaygg/ValorZone-Project" target="_blank" rel="noopener noreferrer" class="project-repo-link">
+              GitHub Repository &nearr;
+            </a>
+          </div>
+          <h3 class="project-title">Daily Habit App</h3>
+          <p class="project-summary">
+            A native iOS mobile application developed with SwiftUI to help users create, monitor, and sustain positive daily routines. Built and analyzed in Xcode leveraging native state management and Apple HIG UI paradigms.
+          </p>
+          <ul class="tech-tags">
+            <li>Swift</li>
+            <li>SwiftUI</li>
+            <li>Xcode</li>
+            <li>Build & Analyze</li>
+            <li>iOS Architecture</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Coursera Certifications -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Coursera Certifications</h2>
+        <p class="section-subtitle">Verified credentials and practical coursework with direct issuer verification links.</p>
+      </div>
+
+      <div class="certs-grid">
+
+        <!-- 1. Advanced MySQL Topics -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; Database Engineering</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">Advanced MySQL Topics</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>XJVDEXTUAUNH</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/XJVDEXTUAUNH" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. CCNA Foundations -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; Cisco Systems</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">CCNA Foundations – Networking Basics and Cisco IOS Essentials</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>5YU7W1ODWPG3</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/5YU7W1ODWPG3" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Introduction to Object-Oriented Programming with Java -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; Computer Science</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">Introduction to Object-Oriented Programming with Java</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>LFJF3H0R5YMS</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/LFJF3H0R5YMS" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Django Web Framework -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; Full-Stack Track</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">Django Web Framework</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>GGO8C7GE632N</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/GGO8C7GE632N" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Advanced Frontend Development and Deployment -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; Web Engineering</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">Advanced Frontend Development and Deployment</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>56EETG4Q4F0S</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/56EETG4Q4F0S" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Tools of the Trade: Linux and SQL -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; DevOps & Systems</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">Tools of the Trade: Linux and SQL</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>DZHDEBADBF01</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/DZHDEBADBF01" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Backend Development and API Creation -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; Backend Engineering</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">Backend Development and API Creation</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>RTS40APT5R73</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/RTS40APT5R73" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. Programming for the Internet of Things Project -->
+        <div class="cert-card">
+          <div>
+            <div class="cert-badge-row">
+              <span class="cert-issuer">Coursera &bull; Embedded Systems</span>
+              <span class="cert-status">Verified</span>
+            </div>
+            <h3 class="cert-title">Programming for the Internet of Things Project</h3>
+          </div>
+          <div class="cert-footer">
+            <div class="cert-id">ID: <span>CUD2DUV5OJW8</span></div>
+            <a href="https://www.coursera.org/account/accomplishments/verify/CUD2DUV5OJW8" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">
+              Verify Link &nearr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h2>Get in Touch</h2>
+          <p>Open to Full-Stack and .NET Backend internship and entry-level IT opportunities.</p>
+          <div class="contact-details">
+            <a href="mailto:porniasjoshua7@gmail.com" class="contact-link">
+              <span class="contact-label">Email</span> porniasjoshua7@gmail.com
+            </a>
+            <a href="tel:09946956036" class="contact-link">
+              <span class="contact-label">Phone</span> +63 994 695 6036
+            </a>
+            <a href="Pornias_CV.pdf" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-label">Resume</span> Download / View Pornias_CV.pdf
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/shuaygg" target="_blank" rel="noopener noreferrer">GitHub (shuaygg)</a>
+          <a href="https://www.linkedin.com/in/joshua-pornias-094315407/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Joshua Pornias. Built with semantic HTML & CSS.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
